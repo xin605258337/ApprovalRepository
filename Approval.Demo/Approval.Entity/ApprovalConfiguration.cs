@@ -44,5 +44,9 @@ namespace Approval.Entity
         /// 是否是开头
         /// </summary>
         public int IsFirst { get; set; }
+        /// <summary>
+        /// 用户
+        /// </summary>
+       public int UseUser { get; set; }
     }
 }
