@@ -9,7 +9,7 @@ namespace Approval.Entity
     /// <summary>
     /// 审批流程配置表
     /// </summary>
-  public  class ApprovalConfiguration
+ public class ApprovalConfiguration
     {
         /// <summary>
         /// ID
