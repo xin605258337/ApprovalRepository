@@ -11,7 +11,11 @@ namespace Approval.Entity
     /// </summary>
     public class ApprovalProcess
     {
+        /// <summary>
+        /// 主键ID
+        /// </summary>
         public int ProcessID { get; set; }
+
         /// <summary>
         /// 审批流程名称
         /// </summary>

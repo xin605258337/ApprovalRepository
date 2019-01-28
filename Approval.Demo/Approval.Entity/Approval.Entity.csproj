@@ -43,8 +43,11 @@
   <ItemGroup>
     <Compile Include="ApprovalConfiguration.cs" />
     <Compile Include="ApprovalCondition.cs" />
+    <Compile Include="ApprovalNode.cs" />
+    <Compile Include="ApprovalProcess.cs" />
     <Compile Include="ApprovalState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Users.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

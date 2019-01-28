@@ -1,0 +1,195 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <script src="~/Scripts/jquery-3.1.1.js"></script>
+    <link href="~/Scripts/BootstrapSouce/css/bootstrap.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+            //加载下拉框数据
+            $.ajax({
+                url: 'http://localhost:0000/Student/GetCountries',
+                type: 'get',
+                success: function (data) {
+                    $(data).each(function (index, data) {
+                        $("select[name=CountryId]").append(" <option value='" + data.CountryId + "'>" + data.CountryName + "</option>");
+                    });
+                }
+
+            });
+
+            //加载下拉框数据
+            $.ajax({
+                url: 'http://localhost:0000/Student/GetCountries',
+                type: 'get',
+                success: function (data) {
+                    $(data).each(function (index, data) {
+                        $("select[name=CountryId]").append(" <option value='" + data.CountryId + "'>" + data.CountryName + "</option>");
+                    });
+                }
+
+            });
+
+            //加载下拉框数据
+            $.ajax({
+                url: 'http://localhost:0000/Student/GetCountries',
+                type: 'get',
+                success: function (data) {
+                    $(data).each(function (index, data) {
+                        $("select[name=CountryId]").append(" <option value='" + data.CountryId + "'>" + data.CountryName + "</option>");
+                    });
+                }
+
+            });
+
+            //加载下拉框数据
+            $.ajax({
+                url: 'http://localhost:0000/Student/GetCountries',
+                type: 'get',
+                success: function (data) {
+                    $(data).each(function (index, data) {
+                        $("select[name=CountryId]").append(" <option value='" + data.CountryId + "'>" + data.CountryName + "</option>");
+                    });
+                }
+
+            });
+
+            //加载下拉框数据
+            $.ajax({
+                url: 'http://localhost:0000/Student/GetCountries',
+                type: 'get',
+                success: function (data) {
+                    $(data).each(function (index, data) {
+                        $("select[name=CountryId]").append(" <option value='" + data.CountryId + "'>" + data.CountryName + "</option>");
+                    });
+                }
+
+            });
+
+            //加载下拉框数据
+            $.ajax({
+                url: 'http://localhost:0000/Student/GetCountries',
+                type: 'get',
+                success: function (data) {
+                    $(data).each(function (index, data) {
+                        $("select[name=CountryId]").append(" <option value='" + data.CountryId + "'>" + data.CountryName + "</option>");
+                    });
+                }
+
+            });
+
+            //加载下拉框数据
+            $.ajax({
+                url: 'http://localhost:0000/Student/GetCountries',
+                type: 'get',
+                success: function (data) {
+                    $(data).each(function (index, data) {
+                        $("select[name=CountryId]").append(" <option value='" + data.CountryId + "'>" + data.CountryName + "</option>");
+                    });
+                }
+
+            });
+
+            //新增流程配置
+            $("#btnAdd").click(function () {
+                $.ajax({
+                    url: '',
+                    type: 'post',
+                    data: $("#formData").serialize(),
+                    success: function (data) {
+                        if (data > 0) {
+                            alert("添加成功!");
+                        }
+                        else {
+                            alert("添加失败!");
+                        }
+                    }
+                })
+            })
+        })
+
+    </script>
+</head>
+<body>
+    <div style="margin-left:300px">
+        <h3>添加流程配置页面</h3>
+        <form method="post" id="formData" enctype="multipart/form-data">
+            <table class="table table-bordered table-hover" style="width:700px;height:500px">
+                <tr>
+                    <td style="text-align:center;vertical-align:middle">审批流程</td>
+                    <td style="text-align:center;vertical-align:middle">
+                        <select name="Select1">
+                            <option value="0">==请选择==</option>
+
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;vertical-align:middle">审批节点</td>
+                    <td style="text-align:center;vertical-align:middle">
+                        <select name="Select1">
+                            <option value="0">==请选择==</option>
+
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;vertical-align:middle">审批人</td>
+                    <td style="text-align:center;vertical-align:middle">
+                        <select name="Select1">
+                            <option value="0">==请选择==</option>
+
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;vertical-align:middle">下一步审批人</td>
+                    <td style="text-align:center;vertical-align:middle">
+                        <select name="Select1">
+                            <option value="0">==请选择==</option>
+
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;vertical-align:middle">审批状态</td>
+                    <td style="text-align:center;vertical-align:middle">
+                        <select name="Select1">
+                            <option value="0">==请选择==</option>
+
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;vertical-align:middle">审批条件</td>
+                    <td style="text-align:center;vertical-align:middle">
+                        <select name="Select1">
+                            <option value="0">==请选择==</option>
+
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;vertical-align:middle">使用用户</td>
+                    <td style="text-align:center;vertical-align:middle">
+                        <select name="Select1">
+                            <option value="0">==请选择==</option>
+
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align:center;vertical-align:middle"><input type="button" id="btnAdd" value="新增" class="btn btn-info" /></td>
+                    <td style="text-align:center;vertical-align:middle"><input type="button" onclick="location.href='/ApprovalConfiguration/Index'" value="显示列表" class="btn btn-danger" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

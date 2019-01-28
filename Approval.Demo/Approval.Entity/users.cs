@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Approval.Entity
 {
-  public  class users
+    public class Users
     {
-            /// <summary>
-            /// id
-            /// </summary>
+        /// <summary>
+        /// id
+        /// </summary>
         public int UserID { get; set; }
+
         /// <summary>
         /// 用户名称
         /// </summary>
