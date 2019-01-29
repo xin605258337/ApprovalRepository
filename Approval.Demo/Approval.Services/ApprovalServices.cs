@@ -23,8 +23,10 @@ namespace Approval.Services
             using (SqlConnection conn = DapperHelper.GetConnString())
             {
                 conn.Open();
-                string sql = "insert into ApprovalConfiguration(ProcessID,NodeID,ApprovalUserID,NextApprovalUserID,StateID,ConditionID,IsFirst,UseUser) values(:ProcessID,:NodeID,:ApprovalUserID,:NextApprovalUserID,:StateID,:ConditionID,:IsFirst,:UseUser)";
-                return conn.Execute(sql, approvalConfiguration);
+                //string sql = @"insert into ApprovalConfiguration(ProcessID,NodeID,ApprovalUserID,NextApprovalUserID,StateID,ConditionID,IsFirst,UseUser) values(:ProcessID,:NodeID,:ApprovalUserID,:NextApprovalUserID,:StateID,:ConditionID,:IsFirst,:UseUser)";
+
+                string sql = string.Format("insert into ApprovalConfiguration(ProcessID,NodeID,ApprovalUserID,NextApprovalUserID,StateID,ConditionID,IsFirst,UseUser) values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')", approvalConfiguration.ProcessID, approvalConfiguration.NodeID, approvalConfiguration.ApprovalUserID, approvalConfiguration.NextApprovalUserID, approvalConfiguration.StateID, approvalConfiguration.ConditionID, approvalConfiguration.IsFirst, approvalConfiguration.UseUser);     
+                return conn.Execute(sql, null);
             }
         }
         /// <summary>

@@ -12,85 +12,85 @@
     <link href="~/Scripts/BootstrapSouce/css/bootstrap.css" rel="stylesheet" />
     <script type="text/javascript">
         $(function () {
-            //加载下拉框数据
+            //加载流程配置数据
             $.ajax({
-                url: 'http://localhost:0000/Student/GetCountries',
+                url: 'http://localhost:8129/GetApprovalProcesses',
                 type: 'get',
                 success: function (data) {
                     $(data).each(function (index, data) {
-                        $("select[name=CountryId]").append(" <option value='" + data.CountryId + "'>" + data.CountryName + "</option>");
+                        $("select[name=ProcessID]").append(" <option value='" + data.ProcessID + "'>" + data.ProcessName + "</option>");
                     });
                 }
 
             });
 
-            //加载下拉框数据
+            //加载审批节点数据
             $.ajax({
-                url: 'http://localhost:0000/Student/GetCountries',
+                url: 'http://localhost:8129/GetApprovalNodes',
                 type: 'get',
                 success: function (data) {
                     $(data).each(function (index, data) {
-                        $("select[name=CountryId]").append(" <option value='" + data.CountryId + "'>" + data.CountryName + "</option>");
+                        $("select[name=NodeID]").append(" <option value='" + data.NodeID + "'>" + data.NodeName + "</option>");
                     });
                 }
 
             });
 
-            //加载下拉框数据
+            //加载审批人数据
             $.ajax({
-                url: 'http://localhost:0000/Student/GetCountries',
+                url: 'http://localhost:8129/GetUsers',
                 type: 'get',
                 success: function (data) {
                     $(data).each(function (index, data) {
-                        $("select[name=CountryId]").append(" <option value='" + data.CountryId + "'>" + data.CountryName + "</option>");
+                        $("select[name=ApprovalUserID]").append(" <option value='" + data.UserID + "'>" + data.UserName + "</option>");
                     });
                 }
 
             });
 
-            //加载下拉框数据
+            //加载下一步审批人数据
             $.ajax({
-                url: 'http://localhost:0000/Student/GetCountries',
+                url: 'http://localhost:8129/GetUsers',
                 type: 'get',
                 success: function (data) {
                     $(data).each(function (index, data) {
-                        $("select[name=CountryId]").append(" <option value='" + data.CountryId + "'>" + data.CountryName + "</option>");
+                        $("select[name=NextApprovalUserID]").append(" <option value='" + data.UserID + "'>" + data.UserName + "</option>");
                     });
                 }
 
             });
 
-            //加载下拉框数据
+            //加载审批状态数据
             $.ajax({
-                url: 'http://localhost:0000/Student/GetCountries',
+                url: 'http://localhost:8129/GetApprovalStates',
                 type: 'get',
                 success: function (data) {
                     $(data).each(function (index, data) {
-                        $("select[name=CountryId]").append(" <option value='" + data.CountryId + "'>" + data.CountryName + "</option>");
+                        $("select[name=StateID]").append(" <option value='" + data.StateID + "'>" + data.StateName + "</option>");
                     });
                 }
 
             });
 
-            //加载下拉框数据
+            //加载审批条件数据
             $.ajax({
-                url: 'http://localhost:0000/Student/GetCountries',
+                url: 'http://localhost:8129/GetApprovalConditions',
                 type: 'get',
                 success: function (data) {
                     $(data).each(function (index, data) {
-                        $("select[name=CountryId]").append(" <option value='" + data.CountryId + "'>" + data.CountryName + "</option>");
+                        $("select[name=ConditionID]").append(" <option value='" + data.ConditionID + "'>" + data.ConditionName + "</option>");
                     });
                 }
 
             });
 
-            //加载下拉框数据
+            //加载使用用户数据
             $.ajax({
-                url: 'http://localhost:0000/Student/GetCountries',
+                url: 'http://localhost:8129/GetUsers',
                 type: 'get',
                 success: function (data) {
                     $(data).each(function (index, data) {
-                        $("select[name=CountryId]").append(" <option value='" + data.CountryId + "'>" + data.CountryName + "</option>");
+                        $("select[name=UseUser]").append(" <option value='" + data.UserID + "'>" + data.UserName + "</option>");
                     });
                 }
 
@@ -99,7 +99,7 @@
             //新增流程配置
             $("#btnAdd").click(function () {
                 $.ajax({
-                    url: '',
+                    url: 'http://localhost:8129/Add',
                     type: 'post',
                     data: $("#formData").serialize(),
                     success: function (data) {
@@ -124,7 +124,7 @@
                 <tr>
                     <td style="text-align:center;vertical-align:middle">审批流程</td>
                     <td style="text-align:center;vertical-align:middle">
-                        <select name="Select1">
+                        <select name="ProcessID">
                             <option value="0">==请选择==</option>
 
                         </select>
@@ -133,7 +133,7 @@
                 <tr>
                     <td style="text-align:center;vertical-align:middle">审批节点</td>
                     <td style="text-align:center;vertical-align:middle">
-                        <select name="Select1">
+                        <select name="NodeID">
                             <option value="0">==请选择==</option>
 
                         </select>
@@ -142,7 +142,7 @@
                 <tr>
                     <td style="text-align:center;vertical-align:middle">审批人</td>
                     <td style="text-align:center;vertical-align:middle">
-                        <select name="Select1">
+                        <select name="ApprovalUserID">
                             <option value="0">==请选择==</option>
 
                         </select>
@@ -151,7 +151,7 @@
                 <tr>
                     <td style="text-align:center;vertical-align:middle">下一步审批人</td>
                     <td style="text-align:center;vertical-align:middle">
-                        <select name="Select1">
+                        <select name="NextApprovalUserID">
                             <option value="0">==请选择==</option>
 
                         </select>
@@ -160,7 +160,7 @@
                 <tr>
                     <td style="text-align:center;vertical-align:middle">审批状态</td>
                     <td style="text-align:center;vertical-align:middle">
-                        <select name="Select1">
+                        <select name="StateID">
                             <option value="0">==请选择==</option>
 
                         </select>
@@ -169,16 +169,24 @@
                 <tr>
                     <td style="text-align:center;vertical-align:middle">审批条件</td>
                     <td style="text-align:center;vertical-align:middle">
-                        <select name="Select1">
+                        <select name="ConditionID">
                             <option value="0">==请选择==</option>
 
                         </select>
                     </td>
                 </tr>
+                
+                <tr>
+                    <td style="text-align:center;vertical-align:middle">是否是开头</td>
+                    <td style="text-align:center;vertical-align:middle">
+                        <input type="radio" name="IsFirst" value="0" checked="checked" />是
+                        <input type="radio" name="IsFirst" value="1"/>否
+                    </td>
+                </tr>
                 <tr>
                     <td style="text-align:center;vertical-align:middle">使用用户</td>
                     <td style="text-align:center;vertical-align:middle">
-                        <select name="Select1">
+                        <select name="UseUser">
                             <option value="0">==请选择==</option>
 
                         </select>
