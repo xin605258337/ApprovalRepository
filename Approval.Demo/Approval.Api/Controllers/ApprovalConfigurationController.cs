@@ -92,7 +92,7 @@ namespace Approval.Api.Controllers
         /// <returns></returns>
         [HttpGet]
         [Route("GetUsers")]
-        public List<users> GetUsers()
+        public List<Users> GetUsers()
         {
             return ApprovalServices.GetUsers();
         }

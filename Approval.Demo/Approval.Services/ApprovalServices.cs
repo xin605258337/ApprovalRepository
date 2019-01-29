@@ -13,8 +13,8 @@ namespace Approval.Services
     using Approval.IServices;
     public class ApprovalServices:IApprovalServices
     {
-        /// <summary>
-        /// 添加审批配置
+        /// <su添加审批配置mmary>
+        /// 
         /// </summary>
         /// <param name="approvalConfiguration"></param>
         /// <returns></returns>
@@ -110,13 +110,13 @@ namespace Approval.Services
         /// 获取用户信息
         /// </summary>
         /// <returns></returns>
-        public List<users> GetUsers()
+        public List<Users> GetUsers()
         {
             using (SqlConnection conn = DapperHelper.GetConnString())
             {
                 conn.Open();
                 string sql = "select * from users";
-                return conn.Query<users>(sql, null).ToList();
+                return conn.Query<Users>(sql, null).ToList();
             }
         }
     }

@@ -57,6 +57,6 @@ namespace Approval.IServices
         /// 获取用户信息
         /// </summary>
         /// <returns></returns>
-        List<users> GetUsers();
+        List<Users> GetUsers();
     }
 }
