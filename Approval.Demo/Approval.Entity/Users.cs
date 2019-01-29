@@ -11,7 +11,8 @@ namespace Approval.Entity
         /// <summary>
         /// id
         /// </summary>
-        public int UserID { get; set; }
+        public int UserID { get; set; }
+
         /// <summary>
         /// 用户名称
         /// </summary>

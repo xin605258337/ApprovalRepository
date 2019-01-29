@@ -38,7 +38,7 @@ namespace Approval.Services
             using (SqlConnection conn = DapperHelper.GetConnString())
             {
                 conn.Open();
-                string sql = "select c.*,a.ConditionName,n.NodeName,n.UserID,d.UserName,p.ProcessName,s.StateName,u.UserName,b.UserName from ApprovalConfiguration c inner join ApprovalCondition a on c.ConditionID = a.ConditionNameinner join ApprovalNode n on c.NodeID = n.NodeIDinner join users d on n.UserID = d.UserIDinner join ApprovalProcess p on c.ProcessID = p.ProcessIDinner join ApprovalState s on c.StateID = s.StateIDinner join users u on c.NextApprovalUserID = u.UserIDinner join users b on c.UseUser = b.UserID";
+                string sql = "select c.*,a.ConditionName,n.NodeName,n.UserID,d.UserName,p.ProcessName,s.StateName,u.UserName,b.UserName from ApprovalConfiguration c inner join ApprovalCondition a on c.ConditionID = a.ConditionID inner join users d on n.UserID = d.UserID inner join ApprovalProcess p on c.ProcessID = p.ProcessID inner join ApprovalState s on c.StateID = s.StateID inner join users u on c.NextApprovalUserID = u.UserID inner join users b on c.UseUser = b.UserID";
                 return conn.Query<ApprovalConfiguration>(sql, null).ToList();
             }
         }

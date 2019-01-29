@@ -32,26 +32,24 @@
 <script>
     $(function () {
         $.ajax({
-            url: "",
+            url: "http://localhost:8129/GetApprovalConfigurations",
             type: "get",
             success: function (data) {
-                $(data).each(function (index,data) {
+                $(data).each(function (index, data) {
                     var tr = '<tr>'
                         + '<td>' + data.ProcessName + '</td>'
                         + '<td>' + data.NodeName + '</td>'
                         + '<td>' + data.UserName + '</td>'
-                        + '<td>' + data.UserName+ '</td>'
-                        + '<td>' + data.StateName+ '</td>'
-                        + '<td>' + data.ConditionName+ '</td>'
-                        + '<td>' + data.UserName+ '</td>'
-                        
+                        + '<td>' + data.UserName + '</td>'
+                        + '<td>' + data.StateName + '</td>'
+                        + '<td>' + data.ConditionName + '</td>'
+                        + '<td>' + data.UserName + '</td>'
+
                         //+ '<td>'++'</td>'
-                            + '</tr>'
+                        + '</tr>'
                     $("#tab").append(tr)
 
-                })
-               
-               ;
+                });
             }
 
         })
