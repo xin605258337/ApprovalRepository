@@ -1,0 +1,60 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-3.1.1.js"></script>
+    <link href="~/Scripts/BootstrapSouce/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <table id="tab" class="table table-hover">
+            <tr>
+                <td>审批流程</td>
+                <td>审批节点</td>
+                <td>审批人</td>
+                <td>下一步审批人</td>
+                <td>审批状态</td>
+                <td>审批条件</td>
+                <td>使用用户</td>
+                <td>操作</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+<script>
+    $(function () {
+        $.ajax({
+            url: "",
+            type: "get",
+            success: function (data) {
+                $(data).each(function (index,data) {
+                    var tr = '<tr>'
+                        + '<td>' + data.ProcessName + '</td>'
+                        + '<td>' + data.NodeName + '</td>'
+                        + '<td>' + data.UserName + '</td>'
+                        + '<td>' + data.UserName+ '</td>'
+                        + '<td>' + data.StateName+ '</td>'
+                        + '<td>' + data.ConditionName+ '</td>'
+                        + '<td>' + data.UserName+ '</td>'
+                        
+                        //+ '<td>'++'</td>'
+                            + '</tr>'
+                    $("#tab").append(tr)
+
+                })
+               
+               ;
+            }
+
+        })
+
+    })
+</script>
