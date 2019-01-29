@@ -10,8 +10,11 @@ namespace Approval.Api.Controllers
     using Approval.Entity;
     using Approval.Services;
     using Approval.IServices;
+    using Unity;
+
     public class ApprovalConfigurationController : ApiController
     {
+        [Dependency]
         public IApprovalServices ApprovalServices { get; set; }
 
         /// <summary>

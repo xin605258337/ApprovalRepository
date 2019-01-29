@@ -7,7 +7,7 @@ using Dapper;
 using System;
 using System.Linq;
 
-   
+
     public class DapperHelper
     {
         public static string connString = ConfigurationManager.ConnectionStrings["connString"].ConnectionString;
@@ -55,4 +55,5 @@ using System.Linq;
         //    }
         //}
     }
+
 

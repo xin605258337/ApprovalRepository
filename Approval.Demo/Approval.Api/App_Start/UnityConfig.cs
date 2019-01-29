@@ -4,6 +4,8 @@ using Unity;
 
 namespace Approval.Api
 {
+    using Approval.IServices;
+    using Approval.Services;
     /// <summary>
     /// Specifies the Unity configuration for the main container.
     /// </summary>
@@ -42,6 +44,8 @@ namespace Approval.Api
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
+            container.RegisterType<IApprovalServices, ApprovalServices>();
+           
         }
     }
 }
